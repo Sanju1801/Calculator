@@ -43,14 +43,23 @@ function handleButtonPress(value) {
         string = string.substring(0, string.length - 1);
         input.value = string;
     }
-    else if (value === 'Age') {
+    else if (value === 'BMI') {
         document.querySelector('.calculator').style.display = 'none';
-        document.querySelector('.ageCalculator').style.display = 'block';
-    } 
-    else if (value === 'Currency') {
-        document.querySelector('.calculator').style.display = 'none';
-        document.querySelector('.currency').style.display = 'block';
-    } 
+        document.querySelector('.bmiCalculator').style.display = 'block';
+        bmiCalculator();
+    }
+    else if (value === 'Back') {
+        document.querySelector('.bmiCalculator').style.display = 'none';
+        document.querySelector('.calculator').style.display = 'block';
+    }
+    // else if (value === 'Calculate BMI') {
+    //     string = bmiCalculator(value);
+    //     input.value = string;
+    // }
+    // else if (value === 'Currency') {
+    //     document.querySelector('.calculator').style.display = 'none';
+    //     document.querySelector('.currency').style.display = 'block';
+    // } 
     else {
         string += value;
         input.value = string;
@@ -70,3 +79,51 @@ function adjustFontSize() {
         input.style.fontSize = '40px'; // Original font size
     }
 }
+
+function bmiCalculator(){
+    let bmiButton = document.getElementById('bmiBtn');
+    
+
+    bmiButton.addEventListener('click', () => {
+        const height = parseInt(document.getElementById("height").value);
+        const weight = parseInt(document.getElementById("weight").value);
+        const result = document.getElementById("bmiOutput");
+
+        let height_status = false, weight_status = false;
+
+        if(height === "" || isNaN(height) || (height <= 0)){
+            document.getElementById("height_error").innerHTML = "Invalid Height";
+        }else{
+            document.getElementById('height_error').innerHTML = '';
+            height_status = true;
+        }
+
+        if(weight === "" || isNaN(weight) || (weight <= 0)){
+            document.getElementById("weight_error").innerHTML = "Invalid Weight";
+        }else{
+            document.getElementById('weight_error').innerHTML = '';
+            weight_status = true;
+        }
+
+        if(height_status && weight_status){
+            const bmi = (weight / ((height * height)/10000)).toFixed(2);
+
+            if(bmi < 10.6){
+                result.innerHTML = 'Under weight : ' + bmi;
+            }
+            else if(bmi >= 18.6 && bmi <= 24.9){
+                result.innerHTML = 'Normal : ' + bmi;
+            }
+            else{
+                result.innerHTML = 'Over weight : ' + bmi;
+            }
+
+            result.style.display = "block";
+        }
+        else{
+            alert('The form has errors');
+        }
+    });
+}
+
+
