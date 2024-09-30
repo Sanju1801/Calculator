@@ -10,7 +10,7 @@
     <div class="calculator">
         <input type="text" placeholder="0" id="inputBox">
         <div>
-            <button class="div2">Age</button>
+            <button class="div2">BMI</button>
             <button class="div2">Currency</button>
         </div>
         <div>
@@ -43,6 +43,29 @@
             <button>.</button>
             <button class="equalBtn">=</button>
         </div>
+    </div>
+
+    <div class="bmiCalculator">
+        <h2>BMI Calculator</h2>
+        <hr>
+        <p class="bmi">Height (cm): 
+            <input type="number" id="height">
+            <br>
+            <span id="height_error"></span>
+        </p>
+
+        <p class="bmi">Weight (Kg): 
+            <input type="number" id="weight">
+            <br>
+            <span id="weight_error"></span>
+        </p>
+        
+        <div class="buttonContainer">
+            <button id="bmiBtn">Calculate BMI</button>
+            <button id="back">Back</button>
+        </div>
+        
+        <div id="bmiOutput"></div>
     </div>
 
     <div class="ageCalculator">
