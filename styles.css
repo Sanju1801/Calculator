@@ -14,6 +14,78 @@ body{
     background: rgb(18, 77, 100);
 }
 
+/*----------------------------- BMI calculator ------------*/
+.bmiCalculator{
+    display: none;    
+    border: 2px solid rgb(129, 117, 117);
+    padding: 15px;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 0px 3px 10px rgb(60, 104, 110);
+}
+
+h2{
+    width: 100%;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.buttonContainer {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 15px;
+}
+
+#bmiBtn, #back {
+    color: white;
+    margin: 10px;
+    flex: 1; /* Allow buttons to grow equally */
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(214, 142, 8);
+    background: rgb(218, 129, 14);
+    box-shadow: -3px -3px 10px rgb(133, 107, 107);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#height, #weight{
+    /* border: black; */
+    padding: 8px;
+    margin: 10px;
+    border-radius: 8px;
+    display: inline;
+    font-size: 25px;
+    background: white;
+    color: black;
+    text-align: center;
+}
+
+.bmi{
+    margin-top: 15px;
+    color: white;
+    font-size: 24px;
+}
+
+#bmiOutput{
+    margin : 10px;
+    border: black;
+    display: none;
+    background: rgb(91, 241, 204);
+    font-size: 25px;
+    color: rgb(20, 6, 6);
+    padding: 10px; 
+    border-radius: 8px; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#height_error, #weight_error{
+    color: red;
+}
+
+
+/* ----------------calculator--------------------- */
 .calculator{
     border: 2px solid rgb(129, 117, 117);
     padding: 15px;
@@ -43,10 +115,7 @@ button{
     width: 60px;
     height: 60px;
     margin: 10px;
-    /* border-radius: 50%; */
     border-radius: 25%;
-    /* background: transparent; */
-    /* columns: #fff; */
     box-shadow: -3px -3px 10px rgb(133, 107, 107);
     font-size: 20px;
     cursor: pointer;
@@ -64,17 +133,14 @@ button{
 .div2 {
     color: #f02d0a;
     background-color: rgb(108, 202, 240);
-    /* border: none; */
     width: 145px;
-    /* height: 60px; */
     margin: 10px;
-    /* border-radius: 50%; */
     border-radius: 12px;
     font-size: 25px;
-    /* cursor: pointer; */
 }
 
-.ageCalculator{
+
+/* .ageCalculator{
     border: 2px solid rgb(129, 117, 117);
     padding: 20px;
     border-radius: 10px;
@@ -90,7 +156,8 @@ button{
     background: transparent;
     box-shadow: 0px 3px 10px rgb(60, 104, 110);
     display: none;
-} 
+}  */
+
 
 
 @media (max-width: 350px) {
@@ -98,6 +165,18 @@ button{
         padding: 2px; 
     }
 
+    /* ---BMI calculator */
+    .buttonContainer {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    #bmiBtn, #back {
+        width: 100%; 
+        margin: 5px 0; 
+    }
+
+    /* ----Calculator */
     .calculator, .ageCalculator, .currency {
         width: 100%; 
         padding: 2px; 
