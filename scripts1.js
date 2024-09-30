@@ -52,14 +52,12 @@ function handleButtonPress(value) {
         document.querySelector('.bmiCalculator').style.display = 'none';
         document.querySelector('.calculator').style.display = 'block';
     }
-    // else if (value === 'Calculate BMI') {
-    //     string = bmiCalculator(value);
-    //     input.value = string;
-    // }
-    // else if (value === 'Currency') {
+    else if (value === 'Currency') {
+        string = "";
+        input.value = string;
     //     document.querySelector('.calculator').style.display = 'none';
     //     document.querySelector('.currency').style.display = 'block';
-    // } 
+    } 
     else {
         string += value;
         input.value = string;
