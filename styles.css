@@ -165,17 +165,6 @@ button{
         padding: 2px; 
     }
 
-    /* ---BMI calculator */
-    .buttonContainer {
-        flex-direction: column; 
-        align-items: stretch; 
-    }
-
-    #bmiBtn, #back {
-        width: 100%; 
-        margin: 5px 0; 
-    }
-
     /* ----Calculator */
     .calculator, .ageCalculator, .currency {
         width: 100%; 
@@ -196,5 +185,18 @@ button{
     .div2 {
         width: calc(100% - 20px); 
         font-size: 20px; 
+    }
+}
+
+@media (max-width: 600px) {
+    /* ---BMI calculator */
+    .buttonContainer {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    #bmiBtn, #back {
+        width: 100%; 
+        margin: 5px 0; 
     }
 }
