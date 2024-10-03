@@ -68,21 +68,44 @@
         <div id="bmiOutput"></div>
     </div>
 
-    <div class="ageCalculator">
-        <!-- <input type="text" placeholder="0" id="inputBox2">
-        <div>
-            <button id="old">date of birth</button>
-            <button id="new">new date</button>
-        </div> -->
-    </div>
 
-    <div class="currency">
-        <!-- <input type="text" placeholder="0" id="inputBox2"> -->
-        <!-- <div>
-            <button id="source">from</button>
-            <button id="destination">to</button>
-        </div> -->
-    </div>
+    <div class="container">
+        <h2>Currency Converter</h2><hr>
+        
+        <form>
+            <p class="amount">Enter Amount :
+                <input placeholder="1" type="number"  />
+            </p>
+
+          <div class="dropdown">
+            <div class="from">
+              <p>From</p>
+              <div class="select-container">
+                <img src="https://flagsapi.com/US/flat/64.png" />
+                <select name="from"></select>
+              </div>
+            </div>
+
+            <div class="to">
+              <p>To</p>
+              <div class="select-container">
+                <img src="https://flagsapi.com/IN/flat/64.png" />
+                <select name="to"></select>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="msg">1USD = 80INR</div>
+
+          <div class="buttonContainer">
+            <button id="exchange">Calculate</button>
+            <button id="backBtn">Back</button>
+        </div>
+        </form>
+      </div>
+      <script src="codes.js"></script>
+      <script src="app.js"></script>
 
     <script src="scripts1.js"></script>
     
