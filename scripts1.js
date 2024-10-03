@@ -53,10 +53,8 @@ function handleButtonPress(value) {
         document.querySelector('.calculator').style.display = 'block';
     }
     else if (value === 'Currency') {
-        string = "";
-        input.value = string;
-    //     document.querySelector('.calculator').style.display = 'none';
-    //     document.querySelector('.currency').style.display = 'block';
+        document.querySelector('.calculator').style.display = 'none';
+        document.querySelector('.container').style.display = 'block';
     } 
     else {
         string += value;
