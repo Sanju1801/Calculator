@@ -14,8 +14,8 @@ body{
     background: rgb(18, 77, 100);
 }
 
-/*----------------------------- BMI calculator ------------*/
-.bmiCalculator{
+/*----------------------------- BMI calculator, Currency convertor ------------*/
+.bmiCalculator, .container{
     display: none;    
     border: 2px solid rgb(129, 117, 117);
     padding: 15px;
@@ -37,7 +37,7 @@ h2{
     margin-top: 15px;
 }
 
-#bmiBtn, #back {
+#bmiBtn, #back, #backBtn, #exchange {
     color: white;
     margin: 10px;
     flex: 1; /* Allow buttons to grow equally */
@@ -62,7 +62,7 @@ h2{
     text-align: center;
 }
 
-.bmi{
+.bmi, .amount{
     margin-top: 15px;
     color: white;
     font-size: 24px;
@@ -82,6 +82,79 @@ h2{
 
 #height_error, #weight_error{
     color: red;
+}
+
+
+/* -----------------------------currency convertor--------- */
+.msg {
+    text-align: center;
+    margin : 10px;
+    border: black;
+    background: rgb(91, 241, 204);
+    font-size: 25px;
+    color: rgb(141, 20, 20);
+    padding: 10px; 
+    border-radius: 8px; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    margin: auto;
+    padding: 10px;
+    color: white;
+}
+
+form select,
+button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 0.75rem;
+    margin: auto;  
+    border: none;
+    outline: none;
+}
+
+form input {
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    height: 3rem;
+    padding-left: 0.5rem;
+    background: white;
+    border-radius: 0.75rem;
+
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.select-container img {
+    max-width: 2rem;
+}
+
+.dropdown i {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.7rem;
+    border: 1px solid lightgray;
+    width: 7.5rem;
+    height: 3rem;
+    padding: 1px;
+}
+
+.select-container select {
+    font-size: 0.9rem;
+    width: auto;
 }
 
 
@@ -140,24 +213,6 @@ button{
 }
 
 
-/* .ageCalculator{
-    border: 2px solid rgb(129, 117, 117);
-    padding: 20px;
-    border-radius: 10px;
-    background: transparent;
-    box-shadow: 0px 3px 10px rgb(60, 104, 110);
-    display: none;
-}
-
-.currency{
-    border: 2px solid rgb(129, 117, 117);
-    padding: 20px;
-    border-radius: 10px;
-    background: transparent;
-    box-shadow: 0px 3px 10px rgb(60, 104, 110);
-    display: none;
-}  */
-
 
 
 @media (max-width: 350px) {
@@ -165,7 +220,7 @@ button{
         padding: 2px; 
     }
 
-    /* ----Calculator */
+    /* -----------------------Calculator---------------- */
     .calculator, .ageCalculator, .currency {
         width: 100%; 
         padding: 2px; 
@@ -188,14 +243,15 @@ button{
     }
 }
 
+/* -------------BMI calculator----------------- */
 @media (max-width: 600px) {
-    /* ---BMI calculator */
+
     .buttonContainer {
         flex-direction: column; 
         align-items: stretch; 
     }
 
-    #bmiBtn, #back {
+    #bmiBtn, #back, #backBtn, #exchange {
         width: 100%; 
         margin: 5px 0; 
     }
