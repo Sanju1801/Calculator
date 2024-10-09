@@ -49,7 +49,14 @@ function handleButtonPress(value) {
         bmiCalculator();
     }
     else if (value === 'Back') {
-        document.querySelector('.bmiCalculator').style.display = 'none';
+        let bmiDisplay = document.querySelector('.bmiCalculator').style.display;
+        let currencyDisplay = document.querySelector('.container').style.display;
+        if(bmiDisplay === 'block'){
+            document.querySelector('.bmiCalculator').style.display = 'none';
+        }
+        else if(currencyDisplay === 'block'){
+            document.querySelector('.container').style.display = 'none';
+        }
         document.querySelector('.calculator').style.display = 'block';
     }
     else if (value === 'Currency') {
@@ -76,6 +83,9 @@ function adjustFontSize() {
     }
 }
 
+
+
+// BMI calculator------------------------------------------------
 function bmiCalculator(){
     let bmiButton = document.getElementById('bmiBtn');
     
@@ -104,7 +114,7 @@ function bmiCalculator(){
         if(height_status && weight_status){
             const bmi = (weight / ((height * height)/10000)).toFixed(2);
 
-            if(bmi < 10.6){
+            if(bmi < 18.6){
                 result.innerHTML = 'Under weight : ' + bmi;
             }
             else if(bmi >= 18.6 && bmi <= 24.9){
@@ -121,5 +131,3 @@ function bmiCalculator(){
         }
     });
 }
-
-
